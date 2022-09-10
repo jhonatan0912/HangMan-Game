@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500;700&display=swap');
+
+:root {
+  --font: 'Source Code Pro', monospace;
+  --pink: #edafb8ff;
+  --white: #ffffffff;
+  --black: #1D1D1F;
+  --light-grey: #dee2e3ff;
+  --grey: #5a6668ff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: var(--white);
+}
+
+body {
+  height: 100vh;
+  color: var(--black);
+  font-family: var(--font);
+  background-color: var(--black);
+}
+
+input,
+button {
+  font-family: inherit;
+}
+
+h1 {
+  font-weight: 700;
+  padding: 0.5rem;
+}
+
+main>div {
+  padding: 1rem 0;
+}
+
+.man-container {
+  position: relative;
+}
+
+.man-container>div {
+  position: absolute;
+  top: 0;
+  border: 1px solid #000;
+  left: 50%;
+  right: 50%;
+  border-color: var(--white);
+}
+
+.man-container .head {
+  border-width: 3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border-color: var(--white);
+}
+
+.body {
+  margin-left: 10px;
+  height: 32px;
+  margin-top: 20px;
+  border-color: #fff;
+  border-width: 3px;
+}
+
+.left-arm {
+  width: 20px;
+  margin-top: 30px;
+  margin-left: 10px;
+  border-width: 3px;
+}
+
+.right-arm {
+  width: 20px;
+  margin-top: 30px;
+  margin-left: -10px;
+  border-width: 3px;
+}
+
+.left-leg {
+  width: 25px;
+  margin-top: 60px;
+  margin-left: 7px;
+  transform: rotate(45deg);
+  border-width: 3px;
+}
+
+.right-leg {
+  width: 25px;
+  margin-top: 60px;
+  margin-left: -10px;
+  transform: rotate(-45deg);
+  border-width: 3px;
+}
+
+input[type="text"] {
+  border: 3px solid #000;
+  border-color: rgb(58, 58, 60);
+  ;
+  background-color: var(--black);
+  font-size: 1.1rem;
+  width: 2.5rem;
+  margin: 1rem;
+  padding: 1rem 0.5rem;
+  text-align: center;
+  font-weight: bolder;
+  cursor: not-allowed;
+  border-radius: 8px;
+}
+
+.letters-used-container p {
+  padding: 0 0.5rem;
+}
+
+#reset {
+  background-color: var(--black);
+  color: #fff;
+  font-size: 1.2rem;
+  border: 3px solid var(--grey);
+  padding: 1rem;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.flex-row {
+  display: flex;
+}
+
+.pad-1 {
+  padding: 1rem;
+}
+
+.mt-2 {
+  margin-top: 2rem;
+}
+
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.t-center {
+  text-align: center;
+}
+
+.fail {
+  color: red;
+}
+
+.win {
+  color: green;
+  font-weight: bolder;
+  font-size: 1.5em;
+}
