@@ -2,7 +2,7 @@
 
 :root {
   --font: 'Source Code Pro', monospace;
-  --pink: #edafb8ff;
+  /* --pink: #edafb8ff; */
   --white: #ffffffff;
   --black: #1D1D1F;
   --light-grey: #dee2e3ff;
@@ -14,10 +14,10 @@
   margin: 0;
   padding: 0;
   color: var(--white);
+  /* border: 1px solid #fff; */
 }
 
 body {
-  height: 100vh;
   color: var(--black);
   font-family: var(--font);
   background-color: var(--black);
@@ -50,6 +50,10 @@ main>div {
   border-color: var(--white);
 }
 
+.explanation-container {
+  padding: 3em 0;
+}
+
 .man-container .head {
   border-width: 3px;
   width: 20px;
@@ -71,6 +75,7 @@ main>div {
   margin-top: 30px;
   margin-left: 10px;
   border-width: 3px;
+  transform: rotate(15deg);
 }
 
 .right-arm {
@@ -78,6 +83,7 @@ main>div {
   margin-top: 30px;
   margin-left: -10px;
   border-width: 3px;
+  transform: rotate(-15deg);
 }
 
 .left-leg {
@@ -103,7 +109,7 @@ input[type="text"] {
   background-color: var(--black);
   font-size: 1.1rem;
   width: 2.5rem;
-  margin: 1rem;
+  margin: .6rem;
   padding: 1rem 0.5rem;
   text-align: center;
   font-weight: bolder;
@@ -113,6 +119,16 @@ input[type="text"] {
 
 .letters-used-container p {
   padding: 0 0.5rem;
+  position: relative;
+}
+
+
+.letters-used-container>p>.line {
+  position: absolute;
+  width: 10px;
+  height: 1px;
+  background-color: #ff3939;
+  z-index: 2;
 }
 
 #reset {
@@ -125,19 +141,23 @@ input[type="text"] {
   border-radius: 8px;
 }
 
+#reset:hover {
+  scale: 1.1;
+}
+
 .flex-row {
   display: flex;
 }
 
-.pad-1 {
+.padding-1 {
   padding: 1rem;
 }
 
-.mt-2 {
+.margin-top-2 {
   margin-top: 2rem;
 }
 
-.flex-center {
+.centrar-flex {
   justify-content: center;
   align-items: center;
 }
@@ -146,12 +166,28 @@ input[type="text"] {
   text-align: center;
 }
 
-.fail {
-  color: red;
+.perdiste {
+  color: #ff3939;
+  font-size: 1.5em;
+  font-weight: bolder;
 }
 
-.win {
-  color: green;
-  font-weight: bolder;
+.ganaste {
+  color: #50ff50;
   font-size: 1.5em;
+  font-weight: bolder;
+}
+
+.icon__container {
+  display: flex;
+  justify-content: center;
+}
+
+.icon {
+  filter: invert(1);
+  width: 200px;
+}
+
+.letter-used {
+  color: #ff5050;
 }

@@ -1,10 +1,16 @@
+const body = document.body;
+body.addEventListener('keydown', (e) => {
+  if (e.key == 'Enter') {
+    location.reload();
+  }
+})
+
 const palabras = [
   "pata",
   "pirata",
   "atajo",
   "semana",
   "ideas",
-  "vestido",
   "miedo",
   "letras",
   "queso",
@@ -46,6 +52,7 @@ const palabras = [
   "herida",
   "miope"
 ];
+
 let word = seleccionarPalabraRandom();
 const palabraContainer = document.getElementById("palabraContainer");
 const hombreContainer = document.getElementById("hombreContainer");
@@ -252,7 +259,7 @@ function drawPart(letter) {
       break;
     case threshold:
       replaceAllInputs();
-      respuestaContainer.innerHTML = "<p class='fail'> Perdiste</p>";
+      respuestaContainer.innerHTML = "<p class='perdiste'> Perdiste</p>";
       break;
   }
 }
@@ -268,6 +275,7 @@ function isLetterUsed(letter) {
 function createLetterGuessed(letter) {
   if (!isLetterUsed(letter)) {
     const node = document.createElement("p");
+    node.classList.add('letter-used');
     node.textContent = letter;
     palabraAdivinadaContainer.appendChild(node);
     palabrasAdivinadas.push(letter);
@@ -284,72 +292,6 @@ function resetHangman() {
   palabraAdivinadaContainer.replaceChildren();
   palabraContainer.replaceChildren();
   respuestaContainer.replaceChildren();
-  let palabrasAdivinadas = [
-    "MediaPlayPause",
-    "MediaTrackNext",
-    "MediaTrackPrevious",
-    "Control",
-    " ",
-    ",",
-    ".",
-    "Backspace",
-    "Delete",
-    "ESC",
-    "ArrowUp",
-    "ArrowLeft",
-    "ArrowDown",
-    "ArrowRight",
-    "End",
-    "OS",
-    "Enter",
-    "PageUp",
-    "NumLock",
-    "PageDown",
-    "Alt",
-    "Tab",
-    "Shift",
-    "Insert",
-    "/",
-    "*",
-    "-",
-    "+",
-    "<",
-    "AltGraph",
-    "CapsLock",
-    "0",
-    "1",
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9",
-    "meta",
-    "contextmenu",
-    "home",
-    "scrolllock",
-    "pause",
-    "f1",
-    "f2",
-    "f3",
-    "f4",
-    "f5",
-    "f6",
-    "f7",
-    "f8",
-    "f9",
-    "f10",
-    "f11",
-    "f12",
-    "escape",
-    "|",
-    "´",
-    "+",
-    "{",
-    "}",
-  ];
   word = seleccionarPalabraRandom();
   crearInputs();
 }
@@ -358,7 +300,7 @@ function logEvent(e) {
   if (estaLetraEnPalabra(e.key) && mistakeCount !== threshold) {
     replaceInput(e.key);
     if (palabraEstaCompleta()) {
-      respuestaContainer.innerHTML = "<p class='win'> Ganaste!</p>";
+      respuestaContainer.innerHTML = "<p class='ganaste'> Ganaste!</p>";
     }
   } else {
     if (!palabraEstaCompleta()) {

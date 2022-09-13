@@ -12,19 +12,23 @@
 
 <body>
 
-  <header class="pad-1">
+  <header class="padding-1">
     <h1 class="t-center">Ahorcado</h1>
   </header>
-
+  <picture class="icon__container">
+    <img class="icon" src="./hangman.png" alt="hangman icon">
+  </picture>
   <main>
     <div class="explanation-container">
       <p id="threshold" class="t-center"> Tienes 6 intentos para adivinar la palabra. Suerte!</p>
     </div>
-    <div id="hombreContainer" class="man-container"> </div>
-    <div id="palabraContainer" class="guess-container flex-row flex-center mt-2"></div>
+    <div id="hombreContainer" class="man-container">
+    </div>
+    <div id="palabraContainer" class="guess-container flex-row centrar-flex margin-top-2"></div>
     <div id="respuestaContainer" class="response-container t-center"></div>
-    <div id="palabraAdivinadaContainer" class="letters-used-container flex-row flex-center"></div>
-    <div class="reset-container flex-row flex-center">
+    <div id="palabraAdivinadaContainer" class="letters-used-container flex-row centrar-flex">
+    </div>
+    <div class="reset-container flex-row centrar-flex">
       <button id="reset"> Reiniciar</button>
     </div>
   </main>
