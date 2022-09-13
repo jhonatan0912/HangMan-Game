@@ -21,6 +21,10 @@ body {
   color: var(--black);
   font-family: var(--font);
   background-color: var(--black);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 input,
@@ -31,13 +35,6 @@ button {
 h1 {
   font-weight: 700;
   padding: 0.5rem;
-}
-
-main {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-self: center;
 }
 
 main>div {
