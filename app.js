@@ -1,10 +1,11 @@
+//!listener para recargar la pagina mediante el boton de enter
 const body = document.body;
 body.addEventListener('keydown', (e) => {
   if (e.key == 'Enter') {
     location.reload();
   }
 })
-
+//!Objetos con palabras random
 const palabras = [
   "pata",
   "pirata",
@@ -54,12 +55,11 @@ const palabras = [
 ];
 
 let word = seleccionarPalabraRandom();
+
 const palabraContainer = document.getElementById("palabraContainer");
 const hombreContainer = document.getElementById("hombreContainer");
 const respuestaContainer = document.getElementById("respuestaContainer");
-const palabraAdivinadaContainer = document.getElementById(
-  "palabraAdivinadaContainer"
-);
+const palabraAdivinadaContainer = document.getElementById("palabraAdivinadaContainer");
 let palabrasAdivinadas = [
   "MediaPlayPause",
   "MediaTrackNext",
@@ -126,6 +126,7 @@ let palabrasAdivinadas = [
   "{",
   "}",
 ];
+
 let mistakeCount = 0;
 const threshold = 7;
 
@@ -137,10 +138,12 @@ thresholdContainer.innerHTML = `Te quedan ${threshold - 1} intentos`;
 
 document.addEventListener("keydown", logEvent);
 
+//! Funcion que selecciona una palabra al azar del objeto palabras
 function seleccionarPalabraRandom() {
   return palabras[Math.floor(Math.random() * palabras.length)];
 }
 
+//! Funcion para crear inputs segun la cantidad de letras de la palabra al azar
 function crearInputs() {
   for (let i = 0; i < word.length; i++) {
     let newNode = document.createElement("input");
@@ -151,6 +154,7 @@ function crearInputs() {
   }
 }
 
+//! Funcion que compara si el tamaño de la palabra esta completa, si es asi devuelve un true
 function palabraEstaCompleta() {
   let letters = 0;
   for (let i = 0; i < word.length; i++) {
@@ -164,7 +168,7 @@ function palabraEstaCompleta() {
     return true;
   }
 }
-
+//! Funcion que compara la palabra random con la letra que ingresamos, si es verdadero devuelve un true
 function estaLetraEnPalabra(letter) {
   for (let i = 0; i < word.length; i++) {
     if (word[i].toLowerCase() === letter.toLowerCase()) {
@@ -172,7 +176,7 @@ function estaLetraEnPalabra(letter) {
     }
   }
 }
-
+//! Funcion que le da da la clase correct si la letra que ingresamos se encuentra en la palabra random
 function replaceInput(letter) {
   for (let i = 0; i < word.length; i++) {
     if (word[i].toLowerCase() === letter.toLowerCase()) {
@@ -183,50 +187,51 @@ function replaceInput(letter) {
     }
   }
 }
-
+//! Funcion que resetea los valores de los inputs y le agrega el atributo de solo leer
 function replaceAllInputs() {
   for (let i = 0; i < word.length; i++) {
     let currentInput = document.getElementById("letter_" + i);
     currentInput.setAttribute("readonly", "true");
   }
 }
-
+//! Funcion para crear la cabeza del hombre
 function drawHead() {
   const head = document.createElement("div");
   head.classList.add("head");
   hombreContainer.appendChild(head);
 }
-
+//! Funcion para crear el cuerpo del hombre
 function drawBody() {
   const body = document.createElement("div");
   body.classList.add("body");
   hombreContainer.appendChild(body);
 }
-
+//! Funcion para crear el brazo izquiedo
 function drawLeftArm() {
   const leftArm = document.createElement("div");
   leftArm.classList.add("left-arm");
   hombreContainer.appendChild(leftArm);
 }
-
+//! Funcion para crear el brazo derecho
 function drawRightArm() {
   const rightArm = document.createElement("div");
   rightArm.classList.add("right-arm");
   hombreContainer.appendChild(rightArm);
 }
-
+//! Funcion para crear la pierna izquierda
 function drawLeftLeg() {
   const leftLeg = document.createElement("div");
   leftLeg.classList.add("left-leg");
   hombreContainer.appendChild(leftLeg);
 }
-
+//! Funcion para crear la pierna derecha
 function drawRightLeg() {
   const rightLeg = document.createElement("div");
   rightLeg.classList.add("right-leg");
   hombreContainer.appendChild(rightLeg);
 }
 
+//! Funcion que encapsula el dibujo del hombre en una sola funcion
 function drawMan() {
   drawHead();
   drawBody();
@@ -236,6 +241,7 @@ function drawMan() {
   drawRightLeg();
 }
 
+//! Funcion para dibujar parte del cuerpo cuando la letra ingresada sea incorrecta
 function drawPart(letter) {
   createLetterGuessed(letter);
   switch (mistakeCount) {
@@ -263,7 +269,7 @@ function drawPart(letter) {
       break;
   }
 }
-
+//! Funcion para verificar si una letra con caracteres extraños se ingreso
 function isLetterUsed(letter) {
   for (let i = 0; i < palabrasAdivinadas.length; i++) {
     if (letter === palabrasAdivinadas[i].toLowerCase()) {
@@ -271,7 +277,7 @@ function isLetterUsed(letter) {
     }
   }
 }
-
+//! Funcion para crear un elemento con las palabras ingresadas
 function createLetterGuessed(letter) {
   if (!isLetterUsed(letter)) {
     const node = document.createElement("p");
@@ -284,6 +290,7 @@ function createLetterGuessed(letter) {
   }
 }
 
+//! Funcion para eliminar la vista del hombre, la palabra random y los inputs
 function resetHangman() {
   mistakeCount = 0;
   thresholdContainer.innerHTML = `Te quedan ${threshold - 1} intentos`;
@@ -296,6 +303,10 @@ function resetHangman() {
   crearInputs();
 }
 
+/*
+*Funcion que detecta cuando el teclado esta presionado
+*para comparar si la letra que ingresamos esta en la palabra random
+*/
 function logEvent(e) {
   if (estaLetraEnPalabra(e.key) && mistakeCount !== threshold) {
     replaceInput(e.key);
@@ -309,4 +320,5 @@ function logEvent(e) {
   }
 }
 
+//! Invocamos a la funcion para crear los inputs cuando se recargue la pagina
 crearInputs();

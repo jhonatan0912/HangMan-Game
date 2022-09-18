@@ -32,6 +32,19 @@ button {
   font-family: inherit;
 }
 
+header {
+  position: relative;
+  width: 100%;
+}
+
+.img-sun {
+  width: 30px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
 h1 {
   font-weight: 700;
   padding: 0.5rem;
