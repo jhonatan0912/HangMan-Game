@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500;700&display=swap');
+
+:root {
+  --font: 'Source Code Pro', monospace;
+  /* --pink: #edafb8ff; */
+  --white: #ffffffff;
+  --black: #1D1D1F;
+  --light-grey: #dee2e3ff;
+  --grey: #5a6668ff;
+  --green-light: #87CBB3;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--black);
+  color: var(--white);
+  font-family: var(--font);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 2em;
+}
+
+.header__first__container {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+img[alt="hangman-icon"] {
+  width: 150px;
+  filter: invert(1);
+}
+
+main {
+  display: grid;
+  grid-template-areas:
+    "main__header main__header main__header"
+    "category-1 category-2 category-3"
+    "category-4 category-5 category-6"
+  ;
+  width: 70%;
+  margin: 2em auto;
+  gap: 24px;
+}
+
+.main__header {
+  grid-area: main__header;
+  background-color: var(--green-light);
+  color: var(--black);
+  font-weight: bolder;
+  padding: 1em;
+  text-align: center;
+  border-radius: 24px 8px;
+  margin: 0 0 40px 0;
+}
+
+.category-1 {
+  grid-area: category-1;
+}
+
+.category-2 {
+  grid-area: category-2;
+}
+
+.category-3 {
+  grid-area: category-3;
+}
+
+.category-4 {
+  grid-area: category-4;
+}
+
+.category-5 {
+  grid-area: category-5;
+}
+
+.category-6 {
+  grid-area: category-6;
+}
+
+.category__img__container {
+  border: 1px solid;
+  height: 200px;
+  margin: auto;
+  border-radius: 32px;
+}
+
+.category__img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.category__name {
+  text-align: center;
+  padding: 1em 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--white);
+}

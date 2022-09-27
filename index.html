@@ -5,35 +5,94 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./app.css">
-  <link rel="shortcut icon" href="./hangman.png" type="image/x-icon">
-  <title>Ahorcado</title>
+  <link rel="stylesheet" href="./index.css">
+  <link rel="shortcut icon" href="./logo.png" type="image/x-icon">
+  <title>AHORCADOS</title>
 </head>
 
 <body>
-
   <header>
-    <h1 class="t-center title">Ahorcado</h1>
+    <div class="header__first__container">
+      <img src="./logo.png" alt="logo">
+      <div>
+        <h2>AHORCADOS</h2>
+        <p>Play Games</p>
+      </div>
+    </div>
+    <div>
+      <img src="./hangman-icon.png" alt="hangman-icon">
+    </div>
   </header>
-  <picture class="icon__container">
-    <img class="icon" src="./hangman.png" alt="hangman icon">
-  </picture>
+
   <main>
-    <div class="explanation-container">
-      <p id="threshold" class="t-center"> Tienes 6 intentos para adivinar la palabra. Suerte!</p>
+
+    <div class="main__header">
+      <h2>Es hora de jugar</h2>
     </div>
-    <div id="hombreContainer" class="man-container">
-    </div>
-    <div id="palabraContainer" class="guess-container flex-row centrar-flex margin-top-2"></div>
-    <div id="respuestaContainer" class="response-container t-center"></div>
-    <div id="palabraAdivinadaContainer" class="letters-used-container flex-row centrar-flex">
-    </div>
-    <div class="reset-container flex-row centrar-flex">
-      <button id="reset"> Reiniciar</button>
-    </div>
+    <a href="./h-m-g-1/h-m-g-1.html">
+      <div class="category category-1">
+        <div class="category__img__container">
+          <img class="category__img" src="./hangman.png" alt="">
+        </div>
+        <h3 class="category__name">
+          Capitales
+        </h3>
+      </div>
+    </a>
+
+    <a href="./h-m-g-2/h-m-g-2.html">
+      <div class="category category-2">
+        <div class="category__img__container">
+          <img class="category__img" src="./hangman.png" alt="">
+        </div>
+        <h3 class="category__name">
+          Paises
+        </h3>
+      </div>
+    </a>
+
+    <a href="./h-m-g-3/h-m-g-3.html">
+      <div class="category category-3">
+        <div class="category__img__container">
+          <img class="category__img" src="./hangman.png" alt="">
+        </div>
+        <h3 class="category__name">
+          Animales
+        </h3>
+      </div>
+    </a>
+    <a href="./h-m-g-4/h-m-g-4.html">
+      <div class="category category-4">
+        <div class="category__img__container">
+          <img class="category__img" src="./hangman.png" alt="">
+        </div>
+        <h3 class="category__name">
+          Verduras
+        </h3>
+      </div>
+    </a>
+    <a href="./h-m-g-5/h-m-g-5.html">
+      <div class="category category-5">
+        <div class="category__img__container">
+          <img class="category__img" src="./hangman.png" alt="">
+        </div>
+        <h3 class="category__name">
+          Nombres
+        </h3>
+      </div>
+    </a>
+    <a href="./h-m-g-6/h-m-g-6.html">
+      <div class="category category-6">
+        <div class="category__img__container">
+          <img class="category__img" src="./hangman.png" alt="">
+        </div>
+        <h3 class="category__name">
+          Objetos
+        </h3>
+      </div>
+    </a>
   </main>
 
-  <script src="./app.js"></script>
 </body>
 
 </html>

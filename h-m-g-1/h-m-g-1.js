@@ -5,7 +5,8 @@ body.addEventListener('keydown', (e) => {
     location.reload();
   }
 })
-//!Objetos con palabras random
+
+//!Objeto con palabras random
 const palabras = [
   "pata",
   "pirata",
@@ -59,7 +60,7 @@ let word = seleccionarPalabraRandom();
 const palabraContainer = document.getElementById("palabraContainer");
 const hombreContainer = document.getElementById("hombreContainer");
 const respuestaContainer = document.getElementById("respuestaContainer");
-const palabraAdivinadaContainer = document.getElementById("palabraAdivinadaContainer");
+const letraAdivinadaContainer = document.getElementById("letraAdivinadaContainer");
 let palabrasAdivinadas = [
   "MediaPlayPause",
   "MediaTrackNext",
@@ -283,7 +284,7 @@ function createLetterGuessed(letter) {
     const node = document.createElement("p");
     node.classList.add('letter-used');
     node.textContent = letter;
-    palabraAdivinadaContainer.appendChild(node);
+    letraAdivinadaContainer.appendChild(node);
     palabrasAdivinadas.push(letter);
     mistakeCount = mistakeCount + 1;
     thresholdContainer.innerHTML = `Te quedan ${threshold - mistakeCount} intentos`;
@@ -296,7 +297,7 @@ function resetHangman() {
   thresholdContainer.innerHTML = `Te quedan ${threshold - 1} intentos`;
 
   hombreContainer.replaceChildren();
-  palabraAdivinadaContainer.replaceChildren();
+  letraAdivinadaContainer.replaceChildren();
   palabraContainer.replaceChildren();
   respuestaContainer.replaceChildren();
   word = seleccionarPalabraRandom();

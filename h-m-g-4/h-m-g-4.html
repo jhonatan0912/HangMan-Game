@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./../app.css">
+  <link rel="shortcut icon" href="./../hangman.png" type="image/x-icon">
+  <title>Ahorcado</title>
+</head>
+
+<body>
+
+  <header>
+    <h1 class="t-center title">Ahorcado</h1>
+  </header>
+  <picture class="icon__container">
+    <img class="icon" src="./../hangman.png" alt="hangman icon">
+  </picture>
+  <main>
+    <div class="explanation-container">
+      <p id="threshold" class="t-center"> Tienes 6 intentos para adivinar la palabra. Suerte!</p>
+    </div>
+    <div id="hombreContainer" class="man-container">
+    </div>
+    <div id="palabraContainer" class="guess-container flex-row centrar-flex margin-top-2"></div>
+    <div id="respuestaContainer" class="response-container t-center"></div>
+    <div id="letraAdivinadaContainer" class="letters-used-container flex-row centrar-flex">
+    </div>
+    <div class="reset-container flex-row centrar-flex">
+      <button id="reset"> Reiniciar</button>
+    </div>
+  </main>
+
+  <script src="./h-m-g-4.js"></script>
+</body>
+
+</html>
