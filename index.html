@@ -11,6 +11,9 @@
 </head>
 
 <body>
+  <!-- <div id="dark-light-container">
+    <img id="icon-dark-light" src="./img/sun.svg">
+  </div> -->
   <header>
     <div class="header__first__container">
       <img src="./logo.png" alt="logo">
@@ -19,7 +22,17 @@
         <p class="header__paragraph">Play Games</p>
       </div>
     </div>
-    <div>
+    <div class="header__second__container">
+      <div>
+        <button id="btn-modal">¿Como se juega?</button>
+      </div>
+
+      <div class="modal hide">
+        <img id="close-modal" src="./img/close.svg" alt="close-modal">
+        <p class="modal__content">Selecciona la categoria y adivina la palabra, tienes 7 intentos
+        </p>
+      </div>
+
       <img src="./hangman-icon.png" alt="hangman-icon">
     </div>
   </header>
@@ -27,7 +40,7 @@
   <main>
 
     <div class="main__header">
-      <h2>Es hora de jugar</h2>
+      <h2>Seleccionar categoria</h2>
     </div>
 
     <a href="./h-m-g-1/h-m-g-1.html">
@@ -106,6 +119,11 @@
     </a>
   </main>
 
+  <footer>
+    <p>Copyright © 2022 Ahorcados Play Games - Todos los derechos reservados.</p>
+    <p>Powered by CLAY SYSTEM</p>
+  </footer>
+  <script src="./assets/js/app.js"></script>
 </body>
 
 </html>
