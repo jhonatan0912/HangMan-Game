@@ -2,7 +2,6 @@
 
 :root {
   --font: 'Source Code Pro', monospace;
-  /* --pink: #edafb8ff; */
   --white: #ffffffff;
   --black: #1D1D1F;
   --light-grey: #dee2e3ff;
@@ -35,6 +34,10 @@ header {
   gap: 24px;
 }
 
+.header__paragraph {
+  text-align: right;
+}
+
 img[alt="hangman-icon"] {
   width: 150px;
   filter: invert(1);
@@ -48,8 +51,8 @@ main {
     "category-4 category-5 category-6"
   ;
   width: 70%;
-  margin: 2em auto;
-  gap: 24px;
+  margin: 2em auto 0;
+  gap: 24px 30px;
 }
 
 .main__header {
@@ -92,6 +95,10 @@ main {
   height: 200px;
   margin: auto;
   border-radius: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
 }
 
 .category__img {
