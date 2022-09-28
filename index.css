@@ -20,6 +20,8 @@ body {
   color: var(--white);
   font-family: var(--font);
   width: 100vw;
+
+
   height: 100vh;
 }
 
@@ -27,7 +29,9 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1em 2em;
+  padding: 3em 0 1em;
+  width: 85%;
+  margin: auto;
 }
 
 .header__first__container {
@@ -117,4 +121,21 @@ main {
 a {
   text-decoration: none;
   color: var(--white);
+}
+
+@media screen and (max-width:1366px) {
+  body {
+    max-width: 1366px;
+    overflow-x: hidden;
+  }
+
+  main {
+    display: grid;
+    grid-template-areas:
+      "main__header main__header"
+      "category-1 category-2"
+      "category-3 category-4"
+      "category-5 category-6"
+    ;
+  }
 }
