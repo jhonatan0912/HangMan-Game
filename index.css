@@ -19,6 +19,8 @@ body {
   background-color: var(--black);
   color: var(--white);
   font-family: var(--font);
+  width: 100vw;
+  height: 100vh;
 }
 
 header {
@@ -94,7 +96,7 @@ main {
   border: 1px solid;
   height: 200px;
   margin: auto;
-  border-radius: 32px;
+  border-radius: 0 32px;
   display: flex;
   justify-content: center;
   align-items: center;
