@@ -163,6 +163,8 @@ footer>p {
   body {
     /* max-width: 1366px; */
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
   }
 
   main {
@@ -175,12 +177,19 @@ footer>p {
     ;
   }
 
+  footer {
+    position: static;
+    margin: 100px 0 0 0;
+  }
 }
 
 @media screen and (max-width:700px) {
   body {
     /* max-width: 1366px; */
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    width: 700px;
   }
 
   main {
@@ -200,6 +209,16 @@ footer>p {
 
   .category__img__container {
     height: 100px;
+  }
+
+  footer {
+    position: static;
+    width: 100%;
+    margin: 50px 0 0 0;
+  }
+
+  img[alt="hangman-icon"] {
+    display: none;
   }
 }
 
