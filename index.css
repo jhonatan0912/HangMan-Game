@@ -20,34 +20,22 @@ body {
   color: var(--white);
   font-family: var(--font);
   width: 100vw;
-
-
   height: 100vh;
+  overflow-x: hidden;
 }
 
 header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 3em 0 1em;
-  width: 85%;
-  margin: auto;
+  justify-content: space-around;
 }
 
 .header__first__container {
   display: flex;
-  align-items: center;
-  gap: 24px;
 }
 
-.header__first__container h2 {
-  font-size: 45px;
-}
-
-.header__second__container {
-  display: flex;
-  align-items: center;
-  gap: 24px;
+img[alt="logo"] {
+  width: 5em;
 }
 
 .header__paragraph {
@@ -55,176 +43,57 @@ header {
 }
 
 img[alt="hangman-icon"] {
-  width: 150px;
-  filter: invert(1);
+  display: none;
+}
+
+.main__header__content {
+  width: 80%;
+  background-color: var(--green-light);
+  margin: 1.5em auto;
+  color: var(--black);
+  text-align: center;
+  padding: .5em;
+  border-radius: 20px 0;
 }
 
 main {
   display: grid;
-  grid-template-areas:
-    "main__header main__header main__header"
-    "category-1 category-2 category-3"
-    "category-4 category-5 category-6"
-  ;
-  width: 70%;
-  margin: 2em auto 0;
-  gap: 40px 30px;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2em;
 }
 
-.main__header {
-  grid-area: main__header;
-  background-color: var(--green-light);
-  color: var(--black);
-  font-weight: bolder;
-  padding: 1em;
+.category {
+  width: 80%;
+  margin: auto;
   text-align: center;
-  border-radius: 40px 0px;
-  margin: 0 0 40px 0;
-}
-
-.category-1 {
-  grid-area: category-1;
-}
-
-.category-2 {
-  grid-area: category-2;
-}
-
-.category-3 {
-  grid-area: category-3;
-}
-
-.category-4 {
-  grid-area: category-4;
-}
-
-.category-5 {
-  grid-area: category-5;
-}
-
-.category-6 {
-  grid-area: category-6;
+  color: var(--white);
 }
 
 .category__img__container {
   border: 2px solid var(--green-light);
-  width: 320px;
-  height: 120px;
-  margin: auto;
-  border-radius: 0 40px;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 16px;
+  justify-content: space-around;
+  border-radius: 0 25px;
+  padding: .5em;
 }
 
 .category__img__container>img {
-  width: 80px;
-  height: 80px;
-}
-
-.category__img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-.category__name {
-  text-align: center;
-  padding: 1em 0;
-}
-
-a {
-  text-decoration: none;
-  color: var(--white);
+  width: 5em;
 }
 
 footer {
-  /* background-color: #242424; */
-  box-shadow: 0 0 8px #fff;
+  box-shadow: 0 0 10px var(--white);
+  margin: 3em 0;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  padding: 30px 100px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
+  text-align: center;
+  gap: 1em;
 }
 
-footer>p {
-  font-size: 13px;
-  color: #E0E0E0;
-}
-
-
-@media screen and (max-width:1366px) {
-  body {
-    /* max-width: 1366px; */
-    overflow-x: hidden;
-    display: flex;
-    flex-direction: column;
-  }
-
-  main {
-    display: grid;
-    grid-template-areas:
-      "main__header main__header"
-      "category-1 category-2"
-      "category-3 category-4"
-      "category-5 category-6"
-    ;
-  }
-
-  footer {
-    position: static;
-    margin: 100px 0 0 0;
-  }
-}
-
-@media screen and (max-width:700px) {
-  body {
-    /* max-width: 1366px; */
-    overflow-x: hidden;
-    display: flex;
-    flex-direction: column;
-    width: 700px;
-  }
-
-  main {
-    width: 70%;
-    margin: auto;
-    display: grid;
-    grid-template-areas:
-      "main__header"
-      "category-1"
-      "category-2"
-      "category-3"
-      "category-4"
-      "category-5"
-      "category-6"
-    ;
-  }
-
-  .category__img__container {
-    height: 100px;
-  }
-
-  footer {
-    position: static;
-    width: 100%;
-    margin: 50px 0 0 0;
-  }
-
-  img[alt="hangman-icon"] {
-    display: none;
-  }
-}
-
-/* MODAL */
+/** MODAL */
 #btn-modal {
-  padding: 1em 2em;
+  padding: 1em;
   border-radius: 16px;
   border: none;
   background-color: var(--green-light);
@@ -241,8 +110,9 @@ footer>p {
   right: 0;
   text-align: center;
   width: 30%;
-  background-color: #87cbb399;
+  background-color: #a0ffde;
   border-radius: 8px;
+  color: var(--black);
 }
 
 .modal.show {
@@ -268,14 +138,12 @@ footer>p {
 }
 
 #close-modal {
-  /* text-align: right; */
-  /* padding: 16px; */
-  width: 20px;
+  width: 15px;
   position: absolute;
-  font-size: 1.5em;
   cursor: pointer;
   top: 5px;
   right: 8px;
+  filter: invert(1);
 }
 
 #close-modal:hover {
@@ -287,6 +155,7 @@ footer>p {
 }
 
 /*FIN  MODAL */
+
 /* DARK MODE */
 #dark-light-container {
   position: absolute;
