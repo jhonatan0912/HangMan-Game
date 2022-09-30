@@ -32,6 +32,8 @@ header {
 
 .header__first__container {
   display: flex;
+  align-items: center;
+  gap: 1em;
 }
 
 img[alt="logo"] {
@@ -83,12 +85,18 @@ main {
 
 footer {
   box-shadow: 0 0 10px var(--white);
-  margin: 3em 0;
+  margin: 3em 0 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   gap: 1em;
+}
+
+a {
+  text-decoration: none;
+  margin: auto;
+  width: 100%;
 }
 
 /** MODAL */
@@ -174,3 +182,105 @@ footer {
 }
 
 /* FIN DARK MODE */
+
+@media screen and (min-width:700px) {
+  main {
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "main__header main__header"
+      "category-1 category-2"
+      "category-3 category-4"
+      "category-5 category-6"
+    ;
+    gap: 4em 4em;
+    width: 80%;
+
+  }
+
+  .main__header {
+    grid-area: main__header;
+  }
+
+  .main__header__content {
+    width: 100%;
+  }
+
+  .category-1 {
+    grid-area: category-1;
+  }
+
+  .category-2 {
+    grid-area: category-2;
+  }
+
+  .category-3 {
+    grid-area: category-3;
+  }
+
+  .category-4 {
+    grid-area: category-4;
+  }
+
+  .category-5 {
+    grid-area: category-5;
+  }
+
+  .category-6 {
+    grid-area: category-6;
+  }
+
+  .category {
+    width: 100%;
+  }
+
+  .category__img__container {
+    padding: 1em 2em;
+    display: flex;
+    gap: 1em;
+    height: 7em;
+  }
+
+  .category__img__container>img {
+    width: 4em;
+  }
+
+  footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    padding: 1em 0;
+  }
+}
+
+@media screen and (min-width:1200px) {
+  header {
+    width: 90%;
+    margin: auto;
+    justify-content: space-between;
+    padding: 1.5em 0;
+  }
+
+  main {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "main__header main__header main__header"
+      "category-1 category-2 category-3"
+      "category-4 category-5 category-6"
+    ;
+    margin-top: 2.5em;
+    gap: 5em 4em;
+  }
+
+  .category__img__container {
+    height: 8em;
+  }
+
+}
+
+@media screen and (min-width:1400px) {
+  main {
+    width: 70%;
+  }
+}
